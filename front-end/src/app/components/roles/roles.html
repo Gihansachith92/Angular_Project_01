@@ -1,4 +1,37 @@
 <p>roles works!</p>
-<p>{{firstName}}</p>
-<p>{{currentDate}}</p>
-<p>{{isActive}}</p>
+<div class="row">
+  <div class="col-3">
+    <p>{{firstName}}</p>
+  </div>
+  <div class="col-3">
+    <p>{{currentDate}}</p>
+  </div>
+  <div class="col-3">
+    <p>{{isActive}}</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <input type="text" [value]="firstName" class="form-control"/>
+  </div>
+  <div class="col-3">
+    <input type="text" [(ngModel)] ="firstName" class="form-control"/>
+  </div>
+  <div class="col-3">
+    <input [type]="inputType">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <button class="btn btn-success" (click)="showWelcomeAlert()">Show Alert</button>
+  </div>
+  <div class="col-3">
+    <button class="btn btn-success" (click)="showMessage('react')">Show react msg</button>
+  </div>
+  <div class="col-3">
+    <button class="btn btn-success" (click)="showMessage('dot net')">Show react msg</button>
+  </div>
+</div>
+
