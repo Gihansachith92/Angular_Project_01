@@ -9,7 +9,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './roles.css'
 })
 export class Roles implements OnInit {
-  
+
+  roleList: any [] = [];
   http = inject(HttpClient)
 
   ngOnInit(): void {
