@@ -13,4 +13,8 @@ export class Master {
 
   currentComponent: string = "Roles";
 
+  changeTab(tabName: string){
+    this.currentComponent = tabName;
+  }
+
 }
