@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,7 +9,17 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './roles.css'
 })
 export class Roles implements OnInit {
+  
+  http = inject(HttpClient)
+
   ngOnInit(): void {
-      alert("hiii")
+
   }
+
+  getAllRoles(){
+      this.http.get("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles").subscribe((res:any)=>{
+        
+      })
+  }
+
 }
