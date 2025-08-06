@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -7,20 +7,8 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './roles.html',
   styleUrl: './roles.css'
 })
-export class Roles {
-  firstName: string = "Angular tutorial";
-  angularVersion = "version 18";
-  version: number = 18;
-  isActive: boolean = false;
-  currentDate: Date = new Date();
-  inputType: string = "text";
-
-  showWelcomeAlert(){
-    alert("welcome to angular 18 tutorial")
+export class Roles implements OnInit {
+  ngOnInit(): void {
+      alert("hiii")
   }
-
-  showMessage(message:string){
-    alert(message)
-  }
-
 }
