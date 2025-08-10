@@ -32,6 +32,7 @@ export class Client implements OnInit{
       if(res.result){
         alert("client created success")
         this.loadClient();
+        this.clientObj = new ClientC();
       }else{
         alert(res.message)
       }
