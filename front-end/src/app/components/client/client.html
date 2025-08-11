@@ -46,10 +46,21 @@
           <div class="col-6">
             <label for="">Person Name</label>
             <input
+              #personName = "ngModel" required minlength="5"
               type="text"
               [(ngModel)]="clientObj.contactPersonName"
               class="form-control"
             />
+            @if (personName.touched) {
+              <div class="text-danger">
+              @if (personName?.errors?.['required']) {
+                <span>This is Required</span>
+              }
+              @if (personName?.errors?.['minlength']) {
+                <span>Min 5 chars Required</span>
+              }
+            </div>
+            }
           </div>
           <div class="col-6">
             <label for="">Company Name</label>
