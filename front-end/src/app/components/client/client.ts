@@ -39,6 +39,10 @@ export class Client implements OnInit{
     })
   }
 
+  onEdit(data: ClientC){
+    this.clientObj = data;
+  }
+
   onDelete(id: number){
     const isDelete = confirm("Are you sure want to delete");
     if(isDelete){
