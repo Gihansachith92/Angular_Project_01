@@ -26,7 +26,7 @@
                   <td>{{item.city}}</td>
                   <td>
                     <button class="btn btn-primary">Edit</button>
-                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-danger" (click)="onDelete(item.clientId)">Delete</button>
                   </td>
                 </tr>
                 }

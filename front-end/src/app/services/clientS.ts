@@ -21,7 +21,7 @@ export class ClientS {
   }
 
   deleteClientById (id: number):Observable<APIResponseModel>{
-        return this.http.get<APIResponseModel>(environment.API_URL + "DeleteClientByClientId?clientId=" + id)
+        return this.http.delete<APIResponseModel>(environment.API_URL + "DeleteClientByClientId?clientId=" + id)
   }
 
 }

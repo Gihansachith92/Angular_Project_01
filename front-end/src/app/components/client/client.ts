@@ -39,4 +39,19 @@ export class Client implements OnInit{
     })
   }
 
+  onDelete(id: number){
+    const isDelete = confirm("Are you sure want to delete");
+    if(isDelete){
+        this.clientService.deleteClientById(id).subscribe((res:APIResponseModel) => {
+      if(res.result){
+        alert("client deleted success")
+        this.loadClient();
+      }else{
+        alert(res.message)
+      }
+    })
+    }
+    
+  }
+
 }
