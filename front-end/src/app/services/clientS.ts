@@ -16,6 +16,10 @@ export class ClientS {
         return this.http.get<APIResponseModel>(environment.API_URL + "GetAllClients")
   }
 
+  getAllEmployee ():Observable<APIResponseModel>{
+       return this.http.get<APIResponseModel>(environment.API_URL + "GetAllEmployee")
+  }
+
   addUpdate (obj: ClientC):Observable<APIResponseModel>{
         return this.http.post<APIResponseModel>(environment.API_URL + "AddUpdateClient" , obj)
   }
