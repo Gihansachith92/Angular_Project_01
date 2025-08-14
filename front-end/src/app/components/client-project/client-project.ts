@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-client-project',
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './client-project.html',
   styleUrl: './client-project.css'
 })
