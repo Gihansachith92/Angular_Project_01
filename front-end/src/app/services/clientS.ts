@@ -28,4 +28,8 @@ export class ClientS {
         return this.http.delete<APIResponseModel>(environment.API_URL + "DeleteClientByClientId?clientId=" + id)
   }
 
+  addClientProjectUpdate (obj: ClientC):Observable<APIResponseModel>{
+        return this.http.post<APIResponseModel>(environment.API_URL + "AddUpdateClientProject" , obj)
+  }
+
 }

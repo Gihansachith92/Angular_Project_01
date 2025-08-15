@@ -50,4 +50,16 @@ export class ClientProject implements OnInit{
     })
   }
 
+  onSaveProject (){
+    const formValue = this.ProjectForm.value;
+    debugger;
+    this.clientSrv.addClientProjectUpdate(formValue).subscribe((res:APIResponseModel) => {
+      if(res.result){
+        alert('project created successfully')
+      }else{
+        alert(res.message)
+      }
+    })
+  }
+
 }
