@@ -3,15 +3,17 @@ import { ClientC } from '../../model/class/ClientC';
 import {ClientS} from '../../services/clientS';
 import { FormsModule } from '@angular/forms';
 import { APIResponseModel } from '../../model/interface/role';
-import { UpperCasePipe } from '@angular/common';
+import { DatePipe, UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-client',
-  imports: [FormsModule, UpperCasePipe],
+  imports: [FormsModule, UpperCasePipe, DatePipe],
   templateUrl: './client.html',
   styleUrl: './client.css'
 })
 export class Client implements OnInit{
+
+  currentDate:Date = new Date();
 
   clientObj: ClientC = new ClientC(); 
   clientList: ClientC[] = [];
