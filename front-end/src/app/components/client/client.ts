@@ -3,11 +3,12 @@ import { ClientC } from '../../model/class/ClientC';
 import {ClientS} from '../../services/clientS';
 import { FormsModule } from '@angular/forms';
 import { APIResponseModel } from '../../model/interface/role';
-import { DatePipe, JsonPipe, UpperCasePipe } from '@angular/common';
+import { AsyncPipe, DatePipe, JsonPipe, UpperCasePipe } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-client',
-  imports: [FormsModule, UpperCasePipe, DatePipe, JsonPipe],
+  imports: [FormsModule, UpperCasePipe, DatePipe, JsonPipe, AsyncPipe],
   templateUrl: './client.html',
   styleUrl: './client.css'
 })
@@ -19,8 +20,11 @@ export class Client implements OnInit{
   clientList: ClientC[] = [];
   clientService = inject(ClientS);
 
+  userList$ : Observable<any> = new Observable<any>;
+
   ngOnInit(): void {
       this.loadClient();
+      this.userList$ = this.clientService.getAllUser();
   }
 
   loadClient(){
